@@ -1,32 +1,28 @@
 <% form_for @user do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :login %><br />
+    Login :
     <%= f.text_field :login %>
   </p>
   <p>
-    <%= f.label :firstname %><br />
+    Prénom :
     <%= f.text_field :firstname %>
   </p>
   <p>
-    <%= f.label :lastname %><br />
+    Nom :
     <%= f.text_field :lastname %>
   </p>
   <p>
-    <%= f.label :email %><br />
+    Email :
     <%= f.text_field :email %>
   </p>
   <p>
-    <%= f.label :crypted_password %><br />
-    <%= f.text_field :crypted_password %>
+    Mot de passe :
+    <%= f.password_field :crypted_password %>
   </p>
   <p>
-    <%= f.label :password_salt %><br />
-    <%= f.text_field :password_salt %>
+    Mot de passe (vérification) :
+    <%= f.password_field :password_salt %>
   </p>
-  <p>
-    <%= f.label :persistence_token %><br />
-    <%= f.text_field :persistence_token %>
-  </p>
-  <p><%= f.submit "Submit" %></p>
+  <p><%= f.submit "Valider" %></p>
 <% end %>
