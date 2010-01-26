@@ -1,21 +1,9 @@
 <h1><%= @user.login %></h1>
 
-<p>
-  <strong>Login :</strong>
-  <%=h @user.login %>
-</p>
-<p>
-  <strong>Prénom :</strong>
-  <%=h @user.firstname %>
-</p>
-<p>
-  <strong>Nom :</strong>
-  <%=h @user.lastname %>
-</p>
-<p>
-  <strong>Email :</strong>
-  <%=h @user.email %>
-</p>
+<p><strong>Login :</strong><%= @user.login %></p>
+<p><strong>Prénom :</strong><%= @user.firstname %></p>
+<p><strong>Nom :</strong><%=h @user.lastname %></p>
+<p><strong>Email :</strong><%=h @user.email %></p>
 
 <p>
   <%= link_to "Editer", edit_user_path(@user) %> |
