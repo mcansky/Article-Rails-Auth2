@@ -1,0 +1,20 @@
+<div class="login">
+	<% if current_user %>
+		<%= link_to "Préférences", edit_user_path(current_user) %> ::
+		<%= link_to "Logout", logout_path %>
+	<% else %>
+		<%= link_to "Login", login_path %> ::
+		<%= link_to "S'enregistrer", new_user_path %> 
+	<% end %>
+</div>
+
+<% if flash[:warning] or flash[:notice] %>
+	<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
+		<%= flash[:warning] || flash[:notice] %>
+	</div>
+	<script type="text/javascript">
+		setTimeout("new Effect.Fade('notice');", 15000)
+	</script>
+<% end %>
+
+<%= yield %>
