@@ -9,8 +9,8 @@
     <tr>
       <td><%= link_to post.title, post %></td>
 			<td><%= link_to post.user.login, post.user %></td>
-      <td><%= link_to "Editer", edit_post_path(post) if current_user %></td>
-      <td><%= link_to "Supprimer", post, :confirm => 'Etes vous sûr ?', :method => :delete if current_user %></td>
+      <td><%= link_to "Editer", edit_post_path(post) if current_user && current_user == post.user %></td>
+      <td><%= link_to "Supprimer", post, :confirm => 'Etes vous sûr ?', :method => :delete if current_user && current_user == post.user %></td>
     </tr>
   <% end %>
 </table>

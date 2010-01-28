@@ -14,7 +14,7 @@
 </p>
 
 <p>
-  <%= link_to "Editer", edit_post_path(@post) if current_user %> |
-  <%= link_to "Supprimer", @post, :confirm => 'Etes vous sûre ?', :method => :delete if current_user %> |
+  <%= link_to "Editer", edit_post_path(@post) if current_user && current_user == @post.user %> |
+  <%= link_to "Supprimer", @post, :confirm => 'Etes vous sûre ?', :method => :delete if current_user && current_user == @post.user %> |
   <%= link_to "Voir tous", posts_path %>
 </p>
