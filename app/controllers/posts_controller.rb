@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   
   def create
     @post = Post.new(params[:post])
+		@post.user = current_user if current_user
     if @post.save
       flash[:notice] = "Post créé avec succès."
       redirect_to @post

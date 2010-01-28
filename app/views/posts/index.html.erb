@@ -3,14 +3,16 @@
 <table>
   <tr>
     <th>Titre</th>
+		<th>Auteur</th>
   </tr>
   <% for post in @posts %>
     <tr>
       <td><%= link_to post.title, post %></td>
-      <td><%= link_to "Editer", edit_post_path(post) %></td>
-      <td><%= link_to "Supprimer", post, :confirm => 'Etes vous sûr ?', :method => :delete %></td>
+			<td><%= link_to post.user.login, post.user %></td>
+      <td><%= link_to "Editer", edit_post_path(post) if current_user %></td>
+      <td><%= link_to "Supprimer", post, :confirm => 'Etes vous sûr ?', :method => :delete if current_user %></td>
     </tr>
   <% end %>
 </table>
 
-<p><%= link_to "Nouveau Post", new_post_path %></p>
+<p><%= link_to "Nouveau Post", new_post_path if current_user %></p>
