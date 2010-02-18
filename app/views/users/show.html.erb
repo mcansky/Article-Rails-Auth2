@@ -6,7 +6,7 @@
 <p><strong>Email :</strong><%=h @user.email %></p>
 
 <p>
-  <%= link_to "Editer", edit_user_path(@user) %> |
-  <%= link_to "Détruire", @user, :confirm => 'Etes vous sûr?', :method => :delete %> |
+  <%= link_to "Editer", edit_user_path(@user) if current_user && current_user == @user %> |
+  <%= link_to "Détruire", @user, :confirm => 'Etes vous sûr?', :method => :delete if current_user && current_user == @user %> |
   <%= link_to "Voir tous", users_path %>
 </p>

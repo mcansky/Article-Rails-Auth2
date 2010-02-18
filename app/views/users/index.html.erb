@@ -11,8 +11,8 @@
       <td><%=h user.firstname %></td>
       <td><%=h user.lastname %></td>
       <td><%=h user.email %></td>
-      <td><%= link_to "Edit", edit_user_path(user) %></td>
-      <td><%= link_to "Destroy", user, :confirm => 'Etes vous sûr ?', :method => :delete %></td>
+      <td><%= link_to "Edit", edit_user_path(user) if current_user && current_user == @user %></td>
+      <td><%= link_to "Destroy", user, :confirm => 'Etes vous sûr ?', :method => :delete if current_user && current_user == @user %></td>
     </tr>
   <% end %>
 </table>
