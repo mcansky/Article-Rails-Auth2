@@ -6,5 +6,6 @@
   <p>Email : <%= f.text_field :email %></p>
   <p>Mot de passe : <%= f.password_field :password %></p>
   <p>Mot de passe (vérification) : <%= f.password_field :password_confirmation %></p>
+	<p>Role : <%= f.select(:role, [['Auteur', 'auteur'], ['Modérateur', 'moderateur']], {}) %></p>
   <p><%= f.submit "Valider" %></p>
 <% end %>
